@@ -1,17 +1,15 @@
-const btnAction = document.querySelector('.btn')
+const colors = ["red","green","blue","#fff","#131313"]
 
-let counter = 1 ;
-
-btnAction.addEventListener('click', () => {
-
-    console.log('hello');
-    if (document.body.style.backgroundColor === "red") {
-    document.body.style.backgroundColor = "#131313"
-    }
-    else{
-        document.body.style.backgroundColor = "red"
-    }
-    
-})
+const btnAction = document.getElementById("btn")
 
 
+btnAction.addEventListener("click", () => {
+
+    const random = getrandom();
+    document.body.style.backgroundColor = colors[random];
+
+});
+
+function getrandom() {
+    return Math.floor(Math.random()*colors.length);
+};
